@@ -8,7 +8,7 @@
   </parent>
   <groupId>de.matrixweb.osgi.wrapped</groupId>
   <artifactId>osgi-wrapped-cssembed</artifactId>
-  <version>1.0.0.4.5</version>
+  <version>1.1.0.4.5-SNAPSHOT</version>
   <packaging>bundle</packaging>
 
   <name>OSGi Bundle CSSEmbed</name>
