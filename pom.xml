@@ -8,7 +8,7 @@
   </parent>
   <groupId>de.matrixweb.osgi.wrapped</groupId>
   <artifactId>osgi-wrapped-cssembed</artifactId>
-  <version>0.4.6-SNAPSHOT</version>
+  <version>1.0.0.4.5</version>
   <packaging>bundle</packaging>
 
   <name>OSGi Bundle CSSEmbed</name>
@@ -87,7 +87,7 @@
         <extensions>true</extensions>
         <configuration>
           <instructions>
-            <Export-Package>net.nczonline.web.*</Export-Package>
+            <_exportcontents>net.nczonline.web.*</_exportcontents>
             <Import-Package>
               com.sun.*;resolution:=optional,
               sun.*;resolution:=optional,
@@ -95,7 +95,7 @@
               org.apache.tools.*;resolution:=optional,
               *
             </Import-Package>
-            <Embed-Dependency>*;scope=compile|runtime;artifactId=!ant|!ant-launcher</Embed-Dependency>
+            <Embed-Dependency>*;scope=compile|runtime;artifactId=!ant|!ant-launcher;inline=true</Embed-Dependency>
             <Embed-Transitive>true</Embed-Transitive>
           </instructions>
         </configuration>
@@ -117,6 +117,19 @@
                     <versionRange>[1.0,)</versionRange>
                     <goals>
                       <goal>enforce</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <ignore />
+                  </action>
+                </pluginExecution>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-scm-plugin</artifactId>
+                    <versionRange>[1.7,)</versionRange>
+                    <goals>
+                      <goal>checkout</goal>
                     </goals>
                   </pluginExecutionFilter>
                   <action>
